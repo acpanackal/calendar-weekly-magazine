@@ -22,10 +22,7 @@ A Python app that pulls upcoming Google Calendar events, turns them into a polis
 ├── .github/
 │   └── workflows/
 │       └── weekly_magazine.yml
-├── README.md
-├── credentials.json   # optional for OAuth setup
-├── token.json         # generated locally when using OAuth
-└── google-service-account.json  # optional for service account setup
+└── README.md
 ```
 
 ## Setup
@@ -96,7 +93,7 @@ The included GitHub Actions workflow runs every Monday at 09:00 UTC and can be t
 
 Set the following repository secrets in GitHub:
 - `GOOGLE_CALENDAR_ID`
-- `GOOGLE_APPLICATION_JSON` (optional if using service account)
+- `GOOGLE_APPLICATION_JSON` (service account JSON)
 - `EMAIL_FROM`
 - `EMAIL_TO`
 - `SMTP_HOST`
@@ -104,8 +101,8 @@ Set the following repository secrets in GitHub:
 - `SMTP_USERNAME`
 - `SMTP_PASSWORD`
 - `SMTP_USE_TLS`
-- `MAGAZINE_TITLE`
-- `DAYS_AHEAD`
+
+Optional repository variables: `DAYS_AHEAD`, `MAGAZINE_TITLE`.
 
 ## Notes
 - If there are no upcoming events, the email still sends with a "No upcoming events" message.
